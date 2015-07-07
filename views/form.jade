@@ -8,11 +8,26 @@ block content
       label(for="comment") Case Study Name: 
       input(type="text", name="comment", value=comment)
       br
-      label(for="comment") Case Study URL: 
+      label(for="url") Case Study URL: 
       input(type="text", name="url", value=url)
+      br
+      label(for="repo") Case Study Repo: 
+      input(type="text", name="repo", value=repo)
+      br
+      label(for="description") Case Study Description: 
+      input(type="text", name="description", value=description)
+      br
+      label(for="updates") Case Study Updates: 
+      input(type="text", name="updates", value=updates)
       br
       input(type="submit", value="Add")
     br
     - for comment in comments
-      p= comment.title
-      p= comment.url
+     .project-container
+       h3.project-title= comment.project
+       a= comment.url
+       a= comment.repo
+       p.project-description= comment.description
+       p.project-updates= comment.updates
+       form(method="delete" action="/form/#{comment._id}?_method=DELETE")
+        input(type="submit", value="Delete")

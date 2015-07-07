@@ -1,4 +1,4 @@
-var db = require('./model/db');
+require('./model/db');
 
 var express = require('express');
 var path = require('path');
@@ -29,6 +29,9 @@ app.use('/', routes);
 app.use('/form', form);
 app.use('/users', users);
 app.use('/create', form);
+app.use('/delete', form);
+app.use('/:id', form);
+app.use('/form/#{comment._id}?/delete', form);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
