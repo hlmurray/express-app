@@ -7,8 +7,10 @@ block content
     form(method="post" action="/create")
       label(for="comment") Case Study Name: 
       input(type="text", name="comment", value=comment)
+      br
       label(for="comment") Case Study URL: 
       input(type="text", name="url", value=url)
+      br
       input(type="submit", value="Add")
     br
     - for comment in comments

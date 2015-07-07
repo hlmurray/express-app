@@ -1,4 +1,4 @@
-require('./model/db');
+var db = require('./model/db');
 
 var express = require('express');
 var path = require('path');
