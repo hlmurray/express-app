@@ -1,0 +1,21 @@
+body {
+  padding: 50px;
+  font-family: Arial, sans-serif;
+}
+
+.project-container {
+	padding-left: 20px;
+}
+
+.project-container a {
+	display: block;
+	margin: 5px 0;
+}
+
+.project-title {
+	margin: 5px 0;
+}
+
+.project-link {
+  color: #00B7FF;
+}
