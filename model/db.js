@@ -1,21 +1,38 @@
-var mongodb = require('mongodb');
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-//We need to work with "MongoClient" interface in order to connect to a mongodb server.
-var MongoClient = mongodb.MongoClient;
 
-// Connection URL. This is where your mongodb server is running.
-var url = 'mongodb://localhost/data';
-
-MongoClient.connect(url, function (err, db) {
-  if (err) {
-    console.log('Unable to connect to the mongoDB server. Error:', err);
-  } else {
-	//HURRAY!! We are connected. :)
-	console.log('Connection established to', url);
-
-	// do some work here with the database.
-
-	//Close connection
-	db.close();
-	}
+var Comment = new Schema({
+    title : String,
+    url: String,
+    repo: String,
+    description: String,
+    updates: String
 });
+
+mongoose.model('comments', Comment);
+
+// var caseStudies = new Schema({
+// 	project: {
+// 	    project_title    : String
+// 	    project_link    : String,
+// 	    project_repo    : String,
+// 	    project_description    : String,
+// 	    project_updates    : String
+// 	}
+// });
+
+// var caseEntry = mongoose.model( 'caseStudies', caseStudies );
+
+// var newCase = new caseEntry({
+// 	project: { 
+// 		project_title: 'Misha Nonoo',
+// 		project_link: 'http://www.mishanonoo.com',
+// 		project_repo: 'http://www.github.com/thecharles/mishanonoo',
+// 		project_description: 'test test',
+// 		project_update: 'test'
+// 	}
+// });
+// console.log(newCase.project.project_title);
+mongoose.connect('mongodb://localhost/data');
+
