@@ -30,6 +30,8 @@ router.post('/', function(req, res) {
 });
 
 /* Delete Case Study */
+router.delete('/:id', function (req, res) {
 
+});
 
 module.exports = router;

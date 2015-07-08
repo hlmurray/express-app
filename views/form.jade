@@ -29,5 +29,5 @@ block content
        a= comment.repo
        p.project-description= comment.description
        p.project-updates= comment.updates
-       form(method="delete" action="/delete/#{comment._id}")
+       form(method="post" action="/delete/#{comment._id}")
         input(type="submit", value="Delete")
