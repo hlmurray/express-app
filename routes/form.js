@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
   });
 });
 
-/* POST form. */
+/* Add New Case Study */
 router.post('/', function(req, res) {
   new Comment({
   	project : req.body.comment,
@@ -29,25 +29,7 @@ router.post('/', function(req, res) {
   });
 });
 
-/* POST form. */
-router.delete('/:id', function (req, res) {
-    Comment.findById(req.params.id)
-        .exec(function(err, entries) {
-           // changed `if (err || !doc)` to `if (err || !entries)`
-            if (err || !entries) {
-                res.statusCode = 404;
-                res.send({});
-            } else {
-                entries.remove(function(err) {
-                    if (err) {
-                        res.statusCode = 403;
-                        res.send(err);
-                    } else {
-                        res.send({});
-                    }
-                });
-            }
-        });
-});
+/* Delete Case Study */
+
 
 module.exports = router;
