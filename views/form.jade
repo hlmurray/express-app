@@ -4,7 +4,7 @@ block content
   //- passed into layout.jade when form.jade is rendered
   block content
     h1= title
-    form(method="post" action="/create")
+    form(method="POST" action="/create")
       label(for="comment") Case Study Name: 
       input(type="text", name="comment", value=comment)
       br
@@ -22,12 +22,12 @@ block content
       br
       input(type="submit", value="Add")
     br
-    - for comment in comments
+    - for entry in entries
      .project-container
-       h3.project-title= comment.project
-       a= comment.url
-       a= comment.repo
-       p.project-description= comment.description
-       p.project-updates= comment.updates
-       form(method="post" action="/delete/#{comment._id}")
+       h3.project-title= entry.project
+       a= entry.url
+       a= entry.repo
+       p.project-description= entry.description
+       p.project-updates= entry.updates
+       form(method="POST", action="/form/#{entry._id}?_method=DELETE")
         input(type="submit", value="Delete")

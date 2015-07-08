@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 
-var Comment = new Schema({
+var Entry = new Schema({
     project : String,
     url: String,
     repo: String,
@@ -10,7 +10,7 @@ var Comment = new Schema({
     updates: String
 });
 
-mongoose.model('comments', Comment);
+mongoose.model('entries', Entry);
 
 mongoose.connect('mongodb://localhost/data');
 

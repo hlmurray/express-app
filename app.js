@@ -6,12 +6,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var form = require('./routes/form');
 
 var app = express();
+
+app.use(methodOverride('_method'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,9 +32,7 @@ app.use('/', routes);
 app.use('/form', form);
 app.use('/users', users);
 app.use('/create', form);
-app.use('/delete', form);
-app.use('/:id', form);
-app.use('/delete/:id', form);
+app.use('/form/#{entry._id}', form);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
