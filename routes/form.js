@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
     console.log(entries);
     res.render(
       'form',
-      {title : 'Add New Case Study', entries : entries}
+      {title : 'Case Studies', entries : entries}
     );
   });
 });
@@ -43,7 +43,8 @@ router.delete('/:id', function (req, res) {
                         res.statusCode = 403;
                         res.send(err);
                     } else {
-                        res.send('Deleted entry with link: ', entries.link);
+                        res.send({});
+                        // res.send('Deleted entry with link: ', entries.link);
                     }
                 });
             }
