@@ -29,6 +29,7 @@ use express-app
 ```
 *I saved this repo under express-app/ directory, which is referenced above.
 
+## Start Node Server
 Go back to your initial terminal tab where you installed the node dependencies, and start the node server:
 ```
 npm start
