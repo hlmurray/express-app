@@ -1,7 +1,3 @@
 # Node Modules #
 ################
 node_modules/
-
-# Database #
-model/journal/
-model/mongod.lock
