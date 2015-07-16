@@ -11,23 +11,10 @@ npm install
 ```
 
 ## Run MongoDB and Mongo
-The MongoDB data are stored in the model/ directory. Open a new tab, navigate to the root directory, and run this command:
+The MongoDB data is stored in db.js. I created an account with MongoLab nd will be using my credentials for this project. To change this, open up db.js and change this line to follow this format:
 ```
-mongod --dbpath model/
+mongoose.connect('mongodb://username:password@host:port/database');
 ```
-
-Once you see '[initandlisten] waiting for connections on port 27017' in the terminal, you're good to go!
-
-Open a new tab, navigate to the model/ and type:
-```
-mongo
-```
-
-Which will then open up a mongo console. Then run:
-```
-use express-app
-```
-*I saved this repo under express-app/ directory, which is referenced above.
 
 ## Start Node Server
 Go back to your initial terminal tab where you installed the node dependencies, and start the node server:
