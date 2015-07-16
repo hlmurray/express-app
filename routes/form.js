@@ -43,8 +43,7 @@ router.delete('/:id', function (req, res) {
                         res.statusCode = 403;
                         res.send(err);
                     } else {
-                        res.send({});
-                        // res.send('Deleted entry with link: ', entries.link);
+                        res.send('Deleted entry with link: ', entries.link);
                     }
                 });
             }

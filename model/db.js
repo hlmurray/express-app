@@ -12,5 +12,5 @@ var Entry = new Schema({
 
 mongoose.model('entries', Entry);
 
-mongoose.connect('mongodb://localhost/data');
+mongoose.connect('mongodb://hlmurray:coleman03@ds047722.mongolab.com:47722/internal-app');
 
